@@ -1,0 +1,24 @@
+{
+  "name": "bucket home demo",
+  "authors": [
+    "Lizzie Li <hi@lizzie.li>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2",
+    "normalize-css": "^4.1.1",
+    "compass-mixins": "^1.0.2",
+    "bootstrap-sass": "^3.3.6"
+  }
+}

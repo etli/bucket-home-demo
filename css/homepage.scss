@@ -1,0 +1,586 @@
+@import "../lib/compass-mixins/lib/animation/core";
+@import "../lib/compass-mixins/lib/compass";
+@import "../lib/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "el_mixins";
+
+body {
+  background: #0F4F96 url("../img/sky.jpg") no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+
+  #homepage {
+    padding: 30px 0;
+    text-align: center;
+
+    h2 {
+      color: #fff;
+      font-size: 28px;
+      font-weight: 300;
+      margin-bottom: 20px;
+      margin-top: 40px;
+    }
+
+    h3 {
+      color: #fff;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .home-nav {
+      @extend .clearfix;
+
+      .logo {
+        float: left;
+      }
+
+      .action-buttons {
+        float: right;
+        margin-top: 3px;
+      }
+
+      .log-in-button {
+        color: #fff;
+        padding: 6px 0;
+      }
+
+      .sign-up-button {
+        margin-left: 10px;
+      }
+    }
+
+    .home-demo {
+      h3 {
+        display: none;
+      }
+
+      .demo-frame {
+        @include border-radius(8px);
+        position: relative;
+        overflow: hidden;
+        height: 360px;
+        text-align: left;
+        max-width: 600px;
+        margin: 0 auto;
+
+        &.website {
+          background-color: #fff;
+
+          .browser-chrome {
+            @extend .clearfix;
+            background-color: #ddd;
+            border-bottom: 1px solid #ccc;
+            height: 56px;
+            padding: 8px 15px;
+
+            .url-bar {
+              float: left;
+              width: 100%;
+
+              button, .dropdown-menu {
+                width: 100%;
+              }
+
+              button {
+                height: 40px;
+                text-align: left;
+              }
+
+              .caret {
+                float: right;
+                margin-top: 9px;
+              }
+
+              .dropdown-menu > li > a {
+                padding: 6px 12px;
+              }
+            }
+
+            .extension-button {
+              @include border-radius(4px);
+              background: none;
+              border: 0;
+              padding: 8px;
+              float: right;
+              display: none;
+
+              img {
+                height: 24px;
+              }
+
+              &:not(:disabled):hover {
+                background: #eaeaea;
+                border: 1px solid #bbb;
+                padding: 7px;
+              }
+              &:not(:disabled):active {
+                background: #ccc;
+              }
+              &:disabled {
+                @include opacity(0.5);
+              }
+            }
+          }
+
+          .content {
+            height: 304px;
+            overflow-y: scroll;
+
+            .place-name.highlight {
+              background-color: #F8E71C;
+              color: #333;
+              padding: 2px;
+              margin: 0 -2px;
+            }
+
+            .lonely-planet, .gmail {
+              display: none;
+            }
+
+            .lonely-planet {
+              background: #fff url("../img/demo/lonely_planet_header.png") left top no-repeat;
+              padding-top: 55px;
+              font-weight: 300;
+
+              .page-title {
+                border-bottom: 1px solid #f5f5f5;
+                padding: 15px;
+                color: #297CBB;
+                font-size: 24px;
+              }
+
+              .page-body {
+                padding: 15px;
+                color: #3b444f;
+
+                .heading {
+                  font-weight: bold;
+                  color: #297CBB;
+                  margin-bottom: 10px;
+                }
+              }
+            }
+
+            .facebook {
+              background: #e9eaed url("../img/demo/facebook_header.png") left top no-repeat;
+              padding: 55px 15px 15px;
+
+              .post, .comments {
+                border: 1px solid;
+                border-color: #dfe0e4;
+                padding: 10px;
+              }
+
+              .post-user, .comment-user {
+                color: #3B5998;
+                font-weight: bold;
+              }
+
+              .post-date, .comment-date {
+                color: #9197a3;
+                font-size: 12px;
+              }
+
+              .post {
+                @include border-radius(3px 3px 0 0);
+                background: #fff;
+
+                .post-photo {
+                  width: 40px;
+                  height: 40px;
+                  float: left;
+                  margin: 0 10px 10px 0;
+                }
+
+                .post-user {
+                  margin-bottom: 2px;
+                }
+
+                .post-actions {
+                  color: #627aad;
+                  font-size: 12px;
+                  margin-top: 10px;
+                }
+              }
+
+              .comments {
+                @include border-radius(0 0 3px 3px);
+                border-top: 0;
+                background: #f6f7f8;
+                font-size: 12px;
+
+                .likes {
+                  color: #3B5998;
+                  padding-bottom: 10px;
+                  border-bottom: 1px solid #e1e2e3;
+                  margin-bottom: 5px;
+                  .fa {
+                    font-size: 13px;
+                    margin-right: 6px;
+                  }
+                }
+
+                .comment {
+                  @extend .clearfix;
+                  padding: 5px 0;
+
+                  .comment-photo {
+                    width: 32px;
+                    height: 32px;
+                    float: left;
+                    margin-right: 8px;
+                  }
+
+                  .comment-actions {
+                    color: #3B5998;
+                  }
+                }
+              }
+            }
+
+            .gmail {
+              background: #fff url("../img/demo/gmail_header.png") left top no-repeat;
+              padding: 48px 15px 15px 11px;
+
+              .email-subject {
+                padding: 10px 4px;
+                border-bottom: 1px solid #e5e5e5;
+                font-size: 18px;
+
+                .email-label {
+                  @include inline-block;
+                  background-color: #ddd;
+                  color: #666;
+                  font-size: 11px;
+                  padding: 1px 6px;
+                  margin-left: 10px;
+                  margin-top: 5px;
+                }
+              }
+
+              .email-users {
+                font-size: 13px;
+
+                .email-photo {
+                  width: 24px;
+                  height: 24px;
+                  margin: 6px 6px 0 4px;
+                  float: left;
+                }
+
+                .email-sender {
+                  padding-top: 8px;
+                  .name {
+                    font-weight: bold;
+                  }
+                  .address {
+                    color: #555;
+                  }
+                }
+
+                .email-recipient {
+                  color: #777;
+                  margin-top: 2px;
+                }
+              }
+
+              .email-body {
+                font-size: 13px;
+                margin-left: 34px;
+                margin-top: 10px;
+              }
+            }
+          }
+        }
+
+        &.results {
+          margin-top: 10px;
+
+          .content {
+            height: 100%;
+
+            .result {
+              height: 100%;
+            }
+
+            .empty {
+              @include opacity(0.35);
+              background-color: #fff;
+              border: 4px dashed #000;
+              color: #000;
+              text-align: center;
+
+              span {
+                @extend .center-horizontally-and-vertically;
+                font-size: 24px;
+                width: 60%;
+              }
+            }
+
+            .lonely-planet, .facebook, .gmail {
+              background: #eee left center no-repeat;
+              display: none;
+            }
+            .lonely-planet {
+              background-image: url("../img/demo/lonely_planet_map.jpg");
+            }
+            .facebook {
+              background-image: url("../img/demo/facebook_map.jpg");
+            }
+            .gmail {
+              background-image: url("../img/demo/gmail_map.jpg");
+            }
+
+            .cards {
+              height: 100%;
+              text-align: center;
+              padding: 15px;
+              overflow-y: scroll;
+
+              img {
+                @include inline-block;
+                @include box-shadow(rgba(0,0,0,0.25) 0 2px 4px);
+                max-width: 100%;
+                margin-bottom: 15px;
+
+                &:last-child {
+                  margin-bottom: 0px;
+                }
+
+                &:hover {
+                  @include opacity(0.75);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .row { position: relative; }
+
+      .demo-center-action {
+        @extend .center-horizontally-and-vertically;
+        width: 120px;
+        height: 120px;
+
+        .scan-button,
+        .scan-pulse,
+        .spinner,
+        .try-another-button {
+          @include box-shadow(0px 1px 6px rgba(0,0,0,0.5));
+          @include border-radius(50%);
+          width: 100%;
+          height: 100%;
+          white-space: normal;
+          border: 8px solid #64A112;
+        }
+
+        .scan-button {
+          padding-top: 30px;
+          font-size: 18px;
+          position: relative;
+        }
+
+        .scan-pulse {
+          @include animation(pulse 2s linear infinite);
+          @include box-shadow(none);
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        .spinner {
+          @include animation(spin 0.75s linear infinite);
+          background-color: #eee;
+          border-right-color: #eee;
+        }
+        .spinner-text {
+          @extend .center-horizontally-and-vertically;
+          color: #666;
+        }
+
+        .try-another-button {
+          img {
+            display: block;
+            margin: 12px auto 10px;
+          }
+        }
+
+        &.scan {
+          .scan-button, .scan-pulse {
+            display: block;
+          }
+          .spinner, .spinner-text,
+          .try-another-button {
+            display: none;
+          }
+        }
+
+        &.scanning {
+          .spinner, .spinner-text {
+            display: block;
+          }
+          .scan-button, .scan-pulse,
+          .try-another-button {
+            display: none;
+          }
+        }
+
+        &.try-another {
+          .try-another-button {
+            display: block;
+          }
+          .scan-button, .scan-pulse,
+          .spinner, .spinner-text {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  body {
+    #homepage {
+      background-attachment: fixed;
+      padding: 40px 0;
+
+      h2 {
+        font-size: 48px;
+        margin-top: 60px;
+      }
+
+      .home-nav {
+        .action-buttons {
+          margin-top: 0;
+        }
+
+        .log-in-button,
+        .sign-up-button {
+          padding: 10px 16px;
+          font-size: 18px;
+          line-height: 1.33;
+        }
+      }
+
+      .home-demo {
+        .demo-frame {
+          &.website {
+            .browser-chrome {
+              background: #ddd url("../img/demo/browser_btns.png") 15px 22px no-repeat;
+              padding-left: 90px;
+              padding-right: 10px;
+
+              .url-bar {
+                width: auto;
+
+                button, .dropdown-menu {
+                  width: 448px;
+                }
+              }
+
+              .extension-button {
+                @include inline-block;
+              }
+            }
+          }
+
+          &.results {
+            .content {
+              .empty span {
+                font-size: 30px;
+              }
+
+              .cards {
+                text-align: right;
+              }
+            }
+          }
+        }
+
+        .demo-center-action {
+          width: 150px;
+          height: 150px;
+
+          .scan-button {
+            font-size: 22px;
+            padding-top: 40px;
+          }
+
+          .spinner-text,
+          .try-another-button {
+            font-size: 18px;
+          }
+
+          .try-another-button {
+            img {
+              margin-top: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  body {
+    #homepage {
+      .home-demo {
+        h3 {
+          display: block;
+        }
+
+        .demo-frame {
+          &.website {
+            .browser-chrome .url-bar {
+              button, .dropdown-menu {
+                width: 304px;
+              }
+            }
+          }
+
+          &.results {
+            margin-top: 0;
+
+            .content {
+              .empty span {
+                width: 46%;
+              }
+
+              .result {
+                background-size: cover;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  body {
+    #homepage {
+      .home-demo {
+        .demo-frame {
+          &.website {
+            .browser-chrome .url-bar {
+              button, .dropdown-menu {
+                width: 404px;
+              }
+            }
+          }
+
+          &.results {
+            .content {
+              .result {
+                background-size: initial;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

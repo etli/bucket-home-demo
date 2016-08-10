@@ -1,0 +1,164 @@
+doctype html
+html
+  head
+    title Bucket
+    meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+
+    link rel="stylesheet" type="text/css" href="lib/normalize-css/normalize.css" media="screen"
+    link rel="stylesheet" type="text/css" href="css/homepage.css" media="screen"
+
+    script type="text/javascript" src="lib/jquery/dist/jquery.min.js"
+    script type="text/javascript" src="lib/bootstrap-sass/assets/javascripts/bootstrap.min.js"
+    script type="text/javascript" src="js/home.js"
+
+  body
+    #homepage
+      .container
+        .home-nav
+          img src="img/blogo_words_white140x37.png" class="logo"
+          .action-buttons
+            a class="btn btn-link log-in-button" Log In
+            a class="btn btn-el btn-green sign-up-button" Sign Up
+
+        h2 Trip planning, reimagined.
+        .home-demo
+          .row
+            .col-md-6
+              h3 Collect ideas across the web...
+            .col-md-6
+              h3 ...to visualize your next trip
+          .row
+            .col-md-6
+              .demo-frame.website
+                .browser-chrome
+                  .url-bar.dropdown
+                    button.btn.btn-default.dropdown-toggle data-toggle="dropdown"
+                      span.current-url https://www.facebook.com
+                      span.caret
+                    ul.dropdown-menu
+                      li
+                        a class="facebook" data-targetpage=".facebook" https://www.facebook.com
+                      li
+                        a class="lonely-planet" data-targetpage=".lonely-planet" http://www.lonelyplanet.com
+                      li
+                        a class="gmail" data-targetpage=".gmail" https://mail.google.com
+                  button.extension-button
+                    img src="img/blogo_no_words34x30.png"
+                .content
+                  .page.facebook
+                    .post
+                      .clearfix
+                        img src="http://graph.facebook.com/4/picture" class="post-photo"
+                        .post-user Mark Zuckerberg
+                        .post-date June 9 at 3:25pm
+                      .post-text I'm looking for a new Napa winery to try this weekend. Any suggestions?
+                      .post-actions Like &bull; Comment &bull; Share
+                    .comments
+                      .likes
+                        | Barack Obama, Elon Musk, and 16,834 others like this.
+                      .comment
+                        img src="http://graph.facebook.com/6815841748/picture" class="comment-photo"
+                        div
+                          span.comment-user> Barack Obama
+                          span
+                            ' Michelle and I enjoyed
+                            span.place-name Darioush Winery
+                            | .
+                        div
+                          span.comment-date> June 9 at 3:42pm &bull;
+                          span.comment-actions Like
+                      .comment
+                        img src="http://graph.facebook.com/19614945368/picture" class="comment-photo"
+                        div
+                          span.comment-user> Taylor Swift
+                          span
+                            ' My favorite is
+                            span.place-name> Scribe
+                            | in Sonoma!
+                        div
+                          span.comment-date> June 9 at 4:01pm &bull;
+                          span.comment-actions Like
+                      .comment
+                        img src="http://graph.facebook.com/216311481960/picture" class="comment-photo"
+                        div
+                          span.comment-user> Bill Gates
+                          span
+                            span.place-name> Cain Vineyard
+                            | has spectacular reds. Appointment only.
+                        div
+                          span.comment-date> June 9 at 4:15pm &bull;
+                          span.comment-actions Like
+
+                  .page.lonely-planet
+                    .page-title 24 free things to do in San Francisco
+                    .page-body
+                      .heading
+                        ' 18. Sea Lions at
+                        span.place-name Pier 39
+                      p Don't pretend you're too cool to gawk at these guys, who canoodle, belch and scratch
+                        their backsides on the docks of Pier 39. As many as 1300 come, as they have since 1990,
+                        providing many photo ops from January to July. www.pier39.com
+                      .heading
+                        ' 19.
+                        span.place-name Seward Street slides
+                      p Lost in the Castro - near the corner of Douglas St and Seward St, about five or six blocks
+                        southwest of Market St and Castro - this tiny park has a couple of curving concrete slides that
+                        are fun to slide down. There are usually cardboard boxes handy to sit on and go, but BYOB
+                        (bring your own box) to be sure. Seriously, does any city have more fun?
+
+                  .page.gmail
+                    .email-subject
+                      | Monterey day trip
+                      .email-label Inbox &nbsp; &times;
+                    .email-users
+                      img src="http://graph.facebook.com/56759922819/picture" class="email-photo"
+                      .email-sender
+                        span.name> Ashton Kutcher
+                        span.address &lt;ashton@example.com&gt;
+                      .email-recipient to me, Angelina
+                    .email-body
+                      p Hi Brad and Angelina,
+                      p Glad to hear you'll be vacationing in Monterey this weekend! It's a beautiful area. Here are my suggestions for things to check out with the kids:
+                      ul
+                        li
+                          span.place-name Cannery Row
+                          | : Lots of shops and restaurants.
+                        li
+                          span.place-name Monterey Bay Aquarium
+                          | : I love their jellyfish exhibit.
+                        li
+                          span.place-name Point Lobos State Reserve
+                          | : Best hike. You might spot an otter or sea lion!
+                      p Be sure to book an Airbnb!
+                      p Ashton
+
+            .col-md-6
+              .demo-frame.results
+                .content
+                  .result.empty
+                    span Your visualized trip ideas
+                  .result.facebook
+                    .cards
+                      img src="img/demo/facebook_card_1.png"
+                      img src="img/demo/facebook_card_2.png"
+                      img src="img/demo/facebook_card_3.png"
+
+                  .result.lonely-planet
+                    .cards
+                      img src="img/demo/lonely_planet_card_1.png"
+                      img src="img/demo/lonely_planet_card_2.png"
+
+                  .result.gmail
+                    .cards
+                      img src="img/demo/gmail_card_1.png"
+                      img src="img/demo/gmail_card_2.png"
+                      img src="img/demo/gmail_card_3.png"
+
+            .demo-center-action.scan
+              .scan-pulse
+              a class="btn btn-el btn-circle btn-green scan-button" Scan for Places
+              .spinner
+              .spinner-text Scanning...
+              a class="btn btn-el btn-circle btn-green try-another-button"
+                img src="img/demo/refresh32x32.png"
+                | Try another website

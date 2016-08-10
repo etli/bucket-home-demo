@@ -1,0 +1,143 @@
+$el-blue: #25ACD1;
+$el-dark-blue: #088AAD;
+$el-bg-light-blue: #DFE8EB;
+$el-green: #8CC63F;
+$el-orange: #FCB040;
+$el-red: #EF5A67;
+
+// nested list of colors
+// name, regular, dark
+$el-colors:
+  ("green", $el-green, #64A112),
+  ("blue", $el-blue, $el-dark-blue),
+  ("orange", $el-orange, #FF8F00),
+  ("red", $el-red, #D13A47),
+  ("white", #fff, #ccc),
+  ("gray", #eee, #bbb);
+
+a, .btn-link {
+  color: $el-dark-blue;
+  &:hover {
+    color: $el-blue;
+  }
+}
+
+.btn.btn-el {
+  @include border-radius(3px, 3px);
+  border: 0;
+  color: #fff;
+
+  @mixin btn-el-style($color) {
+    &.btn-#{nth($color, 1)} {
+      @include box-shadow(nth($color, 3) 0px 2px 0px);
+      background-color: nth($color, 2);
+
+      &:hover {
+        background-color: lighten(nth($color, 2), 10%);
+      }
+
+      &:active {
+        background-color: nth($color, 3);
+      }
+
+      .btn-group > &:not(:first-child) {
+        border-left: 1px solid nth($color, 3);
+      }
+    }
+  }
+
+  @each $color in $el-colors {
+    @include btn-el-style($color)
+  }
+
+  &.btn-white {
+    color: #666;
+  }
+  &.btn-gray {
+    color: #333;
+  }
+
+  &:active {
+    @include transform(translateY(2px));
+    box-shadow: none;
+  }
+
+  &.disabled, &[disabled] {
+    @include opacity(0.3);
+    box-shadow: none;
+  }
+
+  .btn-group & {
+    margin-left: 0;
+  }
+
+  &.btn-circle {
+    @include border-radius(50%);
+    @include box-shadow(none);
+    padding: 0;
+
+    &:active {
+      @include transform(none);
+    }
+  }
+}
+
+.truncate-single-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.center-horizontally-and-vertically {
+  @include transform(translate(-50%, -50%));
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-o-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@include keyframes(spin) {
+  0% {
+    @include transform(rotate(0deg));
+  }
+  100% {
+    @include transform(rotate(360deg));
+  }
+}
+
+@include keyframes(pulse) {
+  0% {
+    @include transform(scale(1));
+    @include opacity(0);
+  }
+  25% {
+    @include transform(scale(1));
+    @include opacity(0.1);
+  }
+  50% {
+    @include transform(scale(1.1));
+    @include opacity(0.2);
+  }
+  75% {
+    @include transform(scale(1.2));
+    @include opacity(0.5);
+  }
+  100% {
+    @include transform(scale(1.5));
+    @include opacity(0);
+  }
+}
